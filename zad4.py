@@ -54,12 +54,13 @@ model.compile(optimizer='Adagrad',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 # Adam optimization is a stochastic gradient descent method that is based on adaptive estimation of first-order and second-order moments
-
+# Adagrad is an optimizer with parameter-specific learning rates, which are adapted relative to how frequently a
+#   parameter gets updated during training. The more updates a parameter receives, the smaller the updates.
 
 #                                       Trenowanie modelu
 ### Karmienie modelu
 # Aby rozpocząć trenowanie, wywołuje metodę model.fit - tak zwaną, ponieważ „dopasowuje” ona model do danych model.fit
-model.fit(train_images, train_labels, epochs=600)
+model.fit(train_images, train_labels, epochs=800)
 # Gdy model uczy się, wyświetlane są metryki strat i dokładności
 
 ### Ocenianie dokładności
